@@ -1,4 +1,20 @@
-# Welcome to your organization's demo respository
-This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+# securite_des_sites_wordpress
+# 🔐 Projet Cybersécurité – Analyse & Sécurisation WordPress
 
-The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+## 📌 Objectif
+Analyser un site WordPress local pour identifier et corriger les failles de sécurité.
+
+## 📁 Structure
+- `analyse-site/` : audit WPScan, Nmap, Burp Suite
+- `bonnes-pratiques/` : sécurisation via plugins et fichiers
+- `authentification-2FA/` : mise en place de la double authentification
+- `scan-automatique/` : script d’analyse automatisée
+- `etude-xss-sqli/` : étude pratique d’une faille vulnérable
+- `rapport/` : rapport final et sources
+
+## 🧰 Outils utilisés
+- WPScan
+- Nmap
+- Burp Suite
+- Wordfence / iThemes Security
+- Kali Linux
