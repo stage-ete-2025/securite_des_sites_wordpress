@@ -1,0 +1,95 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://localhost/wordpress/ [::1]
+[+] Started: Wed Jul  9 11:58:18 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1
+ |  - X-Powered-By: PHP/8.2.12
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://localhost/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://localhost/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Upload directory has listing enabled: http://localhost/wordpress/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://localhost/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.8.1 identified (Latest, released on 2025-04-30).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://localhost/wordpress/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+ |  - http://localhost/wordpress/comments/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+
+[+] WordPress theme in use: twentytwentyfive
+ | Location: http://localhost/wordpress/wp-content/themes/twentytwentyfive/
+ | Latest Version: 1.2 (up to date)
+ | Last Updated: 2025-04-15T00:00:00.000Z
+ | Readme: http://localhost/wordpress/wp-content/themes/twentytwentyfive/readme.txt
+ | [!] Directory listing is enabled
+ | Style URL: http://localhost/wordpress/wp-content/themes/twentytwentyfive/style.css?ver=1.2
+ | Style Name: Twenty Twenty-Five
+ | Style URI: https://wordpress.org/themes/twentytwentyfive/
+ | Description: Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, suppor...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/themes/twentytwentyfive/style.css?ver=1.2, Match: 'Version: 1.2'
+
+[+] Enumerating All Plugins (via Passive Methods)
+
+[i] No plugins Found.
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:15 <============================================================================================================================================================> (137 / 137) 100.00% Time: 00:00:15
+
+[i] No Config Backups Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Wed Jul  9 11:58:44 2025
+[+] Requests Done: 169
+[+] Cached Requests: 6
+[+] Data Sent: 44.46 KB
+[+] Data Received: 355.009 KB
+[+] Memory used: 246.812 MB
+[+] Elapsed time: 00:00:25
