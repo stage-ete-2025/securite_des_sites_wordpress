@@ -1,0 +1,106 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://localhost/wordpress/ [::1]
+[+] Started: Wed Jul 16 08:09:18 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w mod_perl/2.0.12 Perl/v5.34.1
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://localhost/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] The external WP-Cron seems to be enabled: http://localhost/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.8.1 identified (Latest, released on 2025-04-30).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://localhost/wordpress/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+ |  - http://localhost/wordpress/comments/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+
+[+] WordPress theme in use: astra
+ | Location: http://localhost/wordpress/wp-content/themes/astra/
+ | Latest Version: 4.11.5 (up to date)
+ | Last Updated: 2025-07-01T00:00:00.000Z
+ | Readme: http://localhost/wordpress/wp-content/themes/astra/readme.txt
+ | Style URL: http://localhost/wordpress/wp-content/themes/astra/style.css
+ | Style Name: Astra
+ | Style URI: https://wpastra.com/
+ | Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads...
+ | Author: Brainstorm Force
+ | Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 4.11.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/themes/astra/style.css, Match: 'Version: 4.11.5'
+
+[+] Enumerating All Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] elementor
+ | Location: http://localhost/wordpress/wp-content/plugins/elementor/
+ | Latest Version: 3.30.2 (up to date)
+ | Last Updated: 2025-07-09T10:35:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 3.30.2 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.30.2
+ | Confirmed By:
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:48 <=============================================================================================================================================================> (137 / 137) 100.00% Time: 00:00:48
+
+[i] No Config Backups Found.
+
+[+] Performing password attack on Xmlrpc against 1 user/s
+Trying oumaima / aaoumaimaeq Time: 00:00:54 <===========================================================================================================================================================> (121 / 121) 100.00% Time: 00:00:54
+
+[i] No Valid Passwords Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Wed Jul 16 08:11:13 2025
+[+] Requests Done: 296
+[+] Cached Requests: 6
+[+] Data Sent: 111.711 KB
+[+] Data Received: 774.68 KB
+[+] Memory used: 280.93 MB
+[+] Elapsed time: 00:01:54

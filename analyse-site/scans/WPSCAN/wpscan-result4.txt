@@ -1,0 +1,91 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o, default: [N]y
+[i] Updating the Database ...
+[i] Update completed.
+
+[+] URL: http://localhost/wordpress/ [::1]
+[+] Started: Mon Jul 14 11:57:51 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1
+ |  - X-Powered-By: PHP/8.2.12
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://localhost/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.8.1 identified (Latest, released on 2025-04-30).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://localhost/wordpress/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+ |  - http://localhost/wordpress/comments/feed/, <generator>https://wordpress.org/?v=6.8.1</generator>
+
+[+] WordPress theme in use: astra
+ | Location: http://localhost/wordpress/wp-content/themes/astra/
+ | Latest Version: 4.11.5 (up to date)
+ | Last Updated: 2025-07-01T00:00:00.000Z
+ | Readme: http://localhost/wordpress/wp-content/themes/astra/readme.txt
+ | Style URL: http://localhost/wordpress/wp-content/themes/astra/style.css
+ | Style Name: Astra
+ | Style URI: https://wpastra.com/
+ | Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads...
+ | Author: Brainstorm Force
+ | Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 4.11.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/themes/astra/style.css, Match: 'Version: 4.11.5'
+
+[+] Enumerating Users (via Passive and Aggressive Methods)
+ Brute Forcing Author IDs - Time: 00:00:10 <==============================================================================================================================================================> (10 / 10) 100.00% Time: 00:00:10
+
+[i] User(s) Identified:
+
+[+] oumaima
+ | Found By: Rss Generator (Passive Detection)
+ | Confirmed By:
+ |  Wp Json Api (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-json/wp/v2/users/?per_page=100&page=1
+ |  Oembed API - Author URL (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-json/oembed/1.0/embed?url=http://localhost/wordpress/&format=json
+ |  Rss Generator (Aggressive Detection)
+ |  Author Sitemap (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-sitemap-users-1.xml
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+
+[+] WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 2
+ | Requests Remaining: 19
+
+[+] Finished: Mon Jul 14 11:58:42 2025
+[+] Requests Done: 56
+[+] Cached Requests: 15
+[+] Data Sent: 14.409 KB
+[+] Data Received: 14.266 MB
+[+] Memory used: 157.602 MB
+[+] Elapsed time: 00:00:50
