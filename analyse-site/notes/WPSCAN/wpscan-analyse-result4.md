@@ -44,7 +44,7 @@
 
 Recommandations :
 
-    Désactiver l’exécution automatique dans wp-config.php :
+    Désactiver l’exécution automatique dans wp-cron.php :
 
 define('DISABLE_WP_CRON', true);
 
