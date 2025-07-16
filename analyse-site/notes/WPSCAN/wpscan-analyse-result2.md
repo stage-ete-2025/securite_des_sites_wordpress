@@ -3,7 +3,8 @@
 
 ## Résumé du scan WPScan sur le site http://localhost/wordpress/
 
-**Date du scan :** 10 juillet 2025
+ **akouttif imane**
+ **Date du scan :** 10 juillet 2025
 
 ---
 

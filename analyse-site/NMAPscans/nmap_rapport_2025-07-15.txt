@@ -1,0 +1,35 @@
+Rapport d'analyse Nmap — 15 juillet 2025
+Résumé du scan
+
+Un scan Nmap complet a été réalisé sur l'adresse localhost (127.0.0.1) afin d'identifier les ports ouverts et les services actifs sur le serveur hébergeant le site WordPress. Le but est de détecter les points d'entrée potentiellement vulnérables à sécuriser.
+Résultats détaillés
+Port	Service	Version détectée	Description / Risques potentiels
+21/tcp	FTP (ProFTPD)	Serveur FTP ProFTPD	Risque moyen : FTP transmet les données en clair, y compris les identifiants. Risque d’interception (sniffing).
+80/tcp	HTTP (Apache)	Apache httpd 2.4.58 avec PHP 8.2.12	Risque moyen : Communication non chiffrée. Susceptible à des attaques de type interception et modification de contenu.
+443/tcp	HTTPS (Apache)	Apache httpd 2.4.58 avec OpenSSL 1.1.1w	Sécurisé : Utilisation du protocole SSL/TLS pour chiffrer les échanges.
+3306/tcp	MySQL (MariaDB)	MariaDB 10.4.32	Risque moyen : Port MySQL exposé localement. Ne doit pas être accessible depuis l’extérieur sans protections strictes.
+Recommandations de sécurité
+
+    Port 21 (FTP) :
+
+        Désactiver le service FTP s’il n’est pas utilisé.
+
+        Préférer SFTP (SSH File Transfer Protocol) ou FTPS (FTP sécurisé via TLS) pour le transfert de fichiers afin d’assurer la confidentialité des données.
+
+    Port 80 (HTTP) :
+
+        Configurer une redirection automatique du trafic HTTP vers HTTPS pour chiffrer toutes les communications.
+
+        Installer et maintenir à jour un certificat SSL valide (par exemple, via Let’s Encrypt).
+
+    Port 443 (HTTPS) :
+
+        Vérifier régulièrement la configuration SSL/TLS avec des outils comme SSL Labs pour garantir un chiffrement robuste et éviter les vulnérabilités connues.
+
+    Port 3306 (MariaDB) :
+
+        Restreindre l’accès à la base de données en la liant uniquement à l’interface localhost (127.0.0.1).
+
+        Utiliser un pare-feu (iptables, ufw) pour bloquer tout accès externe non autorisé au port 3306.
+
+        Mettre en place des politiques strictes de gestion des utilisateurs et mots de passe pour la base de données.
