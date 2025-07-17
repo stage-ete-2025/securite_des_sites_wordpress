@@ -1,0 +1,134 @@
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-07-16 09:55 EDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000050s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+80/tcp   open  http
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| http-fileupload-exploiter: 
+|   
+|     Failed to upload and execute a payload.
+|   
+|     Failed to upload and execute a payload.
+|   
+|_    Failed to upload and execute a payload.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|   /wordpress/: Blog
+|   /phpmyadmin/: phpMyAdmin
+|   /wordpress/wp-login.php: Wordpress login page.
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /img/: Potentially interesting folder w/ directory listing
+|_  /webalizer/: Potentially interesting folder w/ directory listing
+|_http-trace: TRACE is enabled
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://localhost:80/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?lang=en%27%20OR%20sqlspider&route=%2Fchangelog
+|     http://localhost:80/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?lang=en%27%20OR%20sqlspider&route=%2Fpreferences%2Ffeatures
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     http://localhost:80/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|_    http://localhost:80/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+443/tcp  open  https
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-trace: TRACE is enabled
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|   /wordpress/: Blog
+|   /phpmyadmin/: phpMyAdmin
+|   /wordpress/wp-login.php: Wordpress login page.
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /img/: Potentially interesting folder w/ directory listing
+|_  /webalizer/: Potentially interesting folder w/ directory listing
+| ssl-dh-params: 
+|   VULNERABLE:
+|   Diffie-Hellman Key Exchange Insufficient Group Strength
+|     State: VULNERABLE
+|       Transport Layer Security (TLS) services that use Diffie-Hellman groups
+|       of insufficient strength, especially those using one of a few commonly
+|       shared groups, may be susceptible to passive eavesdropping attacks.
+|     Check results:
+|       WEAK DH GROUP 1
+|             Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+|             Modulus Type: Safe prime
+|             Modulus Source: RFC2409/Oakley Group 2
+|             Modulus Length: 1024
+|             Generator Length: 8
+|             Public Key Length: 1024
+|     References:
+|_      https://weakdh.org
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     https://localhost:443/phpmyadmin/index.php?lang=en%27%20OR%20sqlspider&route=%2Fchangelog
+|     https://localhost:443/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/dashboard/javascripts/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     https://localhost:443/dashboard/javascripts/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     https://localhost:443/dashboard/javascripts/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     https://localhost:443/dashboard/javascripts/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/dist/error_report.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/index.php?table=wp_users&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/js/dist/functions.js?v=5.2.1%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1%27%20OR%20sqlspider&l=en&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en%27%20OR%20sqlspider&lang=en
+|     https://localhost:443/phpmyadmin/js/messages.php?v=5.2.1&l=en&lang=en%27%20OR%20sqlspider
+|     https://localhost:443/phpmyadmin/index.php?table=wp_posts&db=wordpress_local&lang=en%27%20OR%20sqlspider&route=%2Ftable%2Frecent-favorite
+|     https://localhost:443/phpmyadmin/js/dist/ajax.js?v=5.2.1%27%20OR%20sqlspider
+|_    https://localhost:443/phpmyadmin/js/vendor/tracekit.js?v=5.2.1%27%20OR%20sqlspider
+3306/tcp open  mysql
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+
+Nmap done: 1 IP address (1 host up) scanned in 127.06 seconds
