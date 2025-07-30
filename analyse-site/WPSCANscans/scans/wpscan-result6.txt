@@ -1,0 +1,170 @@
+wpscan --url http://localhost/wordpress --enumerate vp --api-token oz3jLFVExzs2mQKysKhUXGNjweSZgzQaQsaI0dJvcGA
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o, default: [N]y
+[i] Updating the Database ...
+[i] Update completed.
+
+[+] URL: http://localhost/wordpress/ [::1]
+[+] Started: Wed Jul 30 07:50:07 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w mod_perl/2.0.12 Perl/v5.34.1
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://localhost/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://localhost/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://localhost/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.8.2 identified (Latest, released on 2025-07-15).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://localhost/wordpress/feed/, <generator>https://wordpress.org/?v=6.8.2</generator>
+ |  - http://localhost/wordpress/comments/feed/, <generator>https://wordpress.org/?v=6.8.2</generator>
+
+[+] WordPress theme in use: astra
+ | Location: http://localhost/wordpress/wp-content/themes/astra/
+ | Last Updated: 2025-07-30T00:00:00.000Z
+ | Readme: http://localhost/wordpress/wp-content/themes/astra/readme.txt
+ | [!] The version is out of date, the latest version is 4.11.8
+ | Style URL: http://localhost/wordpress/wp-content/themes/astra/style.css
+ | Style Name: Astra
+ | Style URI: https://wpastra.com/
+ | Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads...
+ | Author: Brainstorm Force
+ | Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 4.11.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/themes/astra/style.css, Match: 'Version: 4.11.5'
+
+[+] Enumerating Vulnerable Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] contact-form-7
+ | Location: http://localhost/wordpress/wp-content/plugins/contact-form-7/
+ | Last Updated: 2025-06-26T09:17:00.000Z
+ | [!] The version is out of date, the latest version is 6.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | [!] 5 vulnerabilities identified:
+ |
+ | [!] Title: Contact Form 7 < 5.3.2 - Unrestricted File Upload
+ |     Fixed in: 5.3.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/7391118e-eef5-4ff8-a8ea-f6b65f442c63
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35489
+ |      - https://www.getastra.com/blog/911/plugin-exploit/contact-form-7-unrestricted-file-upload-vulnerability/
+ |      - https://www.jinsonvarghese.com/unrestricted-file-upload-in-contact-form-7/
+ |      - https://contactform7.com/2020/12/17/contact-form-7-532/#more-38314
+ |
+ | [!] Title: Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload
+ |     Fixed in: 5.8.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/70e21d9a-b1e6-4083-bcd3-7c1c13fd5382
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-6449
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6
+ |
+ | [!] Title: Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting
+ |     Fixed in: 5.9.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/1c070a2c-2ab0-43bf-b10b-6575709918bc
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-2242
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e
+ |
+ | [!] Title:  Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect
+ |     Fixed in: 5.9.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/8bdcdb5a-9026-4157-8592-345df8fb1a17
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-4704
+ |
+ | [!] Title: Contact Form 7 < 6.0.6 - Order Replay Vulnerability
+ |     Fixed in: 6.0.6
+ |     References:
+ |      - https://wpscan.com/vulnerability/7dbafbe2-abbc-4191-a587-afa89c2f7421
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-3247
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/38257dbf-288e-4028-af65-85f5389888ac
+ |
+ | Version: 5.2.2 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.2.2
+ |  - http://localhost/wordpress/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.2.2
+ | Confirmed By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/contact-form-7/readme.txt
+
+[+] elementor
+ | Location: http://localhost/wordpress/wp-content/plugins/elementor/
+ | Last Updated: 2025-07-22T14:34:00.000Z
+ | [!] The version is out of date, the latest version is 3.30.3
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | [!] 1 vulnerability identified:
+ |
+ | [!] Title: Elementor < 3.30.3 - Contributor+ Stored XSS via Text Path Widget
+ |     Fixed in: 3.30.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/785a15fe-18ef-4ae2-9143-c625a7a16063
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-4566
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/af29ec92-5b07-4f57-a25f-19f3a894a193
+ |
+ | Version: 3.30.2 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.30.2
+ | Confirmed By:
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+
+[+] WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 4
+ | Requests Remaining: 21
+
+[+] Finished: Wed Jul 30 07:50:18 2025
+[+] Requests Done: 49
+[+] Cached Requests: 6
+[+] Data Sent: 11.757 KB
+[+] Data Received: 14.279 MB
+[+] Memory used: 252.832 MB
+[+] Elapsed time: 00:00:11
