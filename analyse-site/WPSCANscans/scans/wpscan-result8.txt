@@ -1,0 +1,297 @@
+(kali㉿kali)-[~]
+└─$ wpscan --url http://localhost/wordpress/ -e vp vt --api-token oz3jLFVExzs2mQKysKhUXGNjweSZgzQaQsaI0dJvcGA
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://localhost/wordpress/ [::1]
+[+] Started: Tue Aug 19 12:18:45 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w mod_perl/2.0.12 Perl/v5.34.1
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://localhost/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://localhost/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Registration is enabled: http://localhost/wordpress/wp-login.php?action=register
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Upload directory has listing enabled: http://localhost/wordpress/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://localhost/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.8.2 identified (Latest, released on 2025-07-15).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://localhost/wordpress/feed/, <generator>https://wordpress.org/?v=6.8.2</generator>
+ |  - http://localhost/wordpress/comments/feed/, <generator>https://wordpress.org/?v=6.8.2</generator>
+
+[+] WordPress theme in use: woostify
+ | Location: http://localhost/wordpress/wp-content/themes/woostify/
+ | Latest Version: 2.4.2 (up to date)
+ | Last Updated: 2025-06-16T00:00:00.000Z
+ | Readme: http://localhost/wordpress/wp-content/themes/woostify/readme.txt
+ | Style URL: http://localhost/wordpress/wp-content/themes/woostify/style.css?ver=2.4.2
+ | Style Name: Woostify
+ | Style URI: https://woostify.com
+ | Description: Woostify is fast, lightweight, responsive and super flexible WooCommerce theme built with SEO, speed...
+ | Author: Woostify
+ | Author URI: https://woostify.com/about
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 2.4.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/themes/woostify/style.css?ver=2.4.2, Match: 'Version:      2.4.2'
+
+[+] Enumerating Vulnerable Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] elementor
+ | Location: http://localhost/wordpress/wp-content/plugins/elementor/
+ | Last Updated: 2025-08-11T10:06:00.000Z
+ | [!] The version is out of date, the latest version is 3.31.2
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | [!] 2 vulnerabilities identified:
+ |
+ | [!] Title: Elementor < 3.30.3 - Contributor+ Stored XSS via Text Path Widget
+ |     Fixed in: 3.30.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/785a15fe-18ef-4ae2-9143-c625a7a16063
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-4566
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/af29ec92-5b07-4f57-a25f-19f3a894a193
+ |
+ | [!] Title: Elementor < 3.30.3 - Admin+ Arbitrary File Read via Image Import
+ |     Fixed in: 3.30.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/87fd0b78-c0e8-43a8-8b52-bd7a294a96e0
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-8081
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/13929b51-b32e-401c-a642-49f7cd2d07bf
+ |
+ | Version: 3.30.2 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.30.2
+ |  - http://localhost/wordpress/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.30.2
+ | Confirmed By:
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/elementor/readme.txt
+
+[+] metform
+ | Location: http://localhost/wordpress/wp-content/plugins/metform/
+ | Last Updated: 2025-08-10T11:18:00.000Z
+ | [!] The version is out of date, the latest version is 4.0.4
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | [!] 7 vulnerabilities identified:
+ |
+ | [!] Title: Metform Elementor Contact Form Builder < 3.8.2 - Cross-Site Request Forgery
+ |     Fixed in: 3.8.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/4cb3fd12-456e-4b77-9953-75957a99df8a
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-6788
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/30fd2425-ee48-4777-91c1-03906d63793a
+ |
+ | [!] Title: Metform Elementor Contact Form Builder < 3.8.4 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode
+ |     Fixed in: 3.8.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/3bea1ac5-0b4e-421f-9788-d8166087f91c
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-1585
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/342d6941-6987-4756-b554-1699128b9108
+ |
+ | [!] Title: Metform Elementor Contact Form Builder < 3.8.6 - Contributor+ Stored XSS
+ |     Fixed in: 3.8.6
+ |     References:
+ |      - https://wpscan.com/vulnerability/35de8f2d-7b79-49de-ae03-a5e2dfad3251
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-2791
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/0dad759d-9b44-47ca-8410-e39f65dc919c
+ |
+ | [!] Title: Metform Elementor Contact Form Builder < 3.8.4 - Missing Authorization to Notice Dismissal
+ |     Fixed in: 3.8.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/6306d761-f39b-43d5-bc6a-157a6cd54883
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33570
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/996d1514-2c1f-4888-ac2f-bc58e926d3ef
+ |
+ | [!] Title: MetForm – Contact Form, Survey, Quiz, & Custom Form Builder for Elementor < 3.8.9 - Unauthenticated Sensitive Information Exposure
+ |     Fixed in: 3.8.9
+ |     References:
+ |      - https://wpscan.com/vulnerability/60351d14-c07f-487d-9b20-be228204ab30
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-4266
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/8edb72f5-dda3-4c59-ba7a-7a460cb59c03
+ |
+ | [!] Title: Metform < 3.9.3 - Admin+ SSRF
+ |     Fixed in: 3.9.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/e0680bd9-3529-4461-9ced-bb27ad98c36b
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30914
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f4b0be8-d2d7-4198-98a4-bb59561ff92e
+ |
+ | [!] Title: MetForm < 4.0.2 - Contributor+ Stored XSS via mf-template DOM Element
+ |     Fixed in: 4.0.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/16ebe012-1ba8-4a89-aff8-a6e4bff51a72
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-5684
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dded505-8968-4ed2-8883-42a3ec50155c
+ |
+ | Version: 3.8.0 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/metform/readme.txt
+
+[+] smart-wishlist-for-more-convert
+ | Location: http://localhost/wordpress/wp-content/plugins/smart-wishlist-for-more-convert/
+ | Last Updated: 2025-07-06T14:06:00.000Z
+ | [!] The version is out of date, the latest version is 1.9.5
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | [!] 3 vulnerabilities identified:
+ |
+ | [!] Title: WooCommerce Wishlist < 1.8.8 - Unauthenticated Wishlist Disclosure via download_pdf_file Function
+ |     Fixed in: 1.8.8
+ |     References:
+ |      - https://wpscan.com/vulnerability/ed3db8cd-6365-436a-9227-aeb0c856b36c
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13694
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/59fe7630-ab94-419f-aca5-39b74d86ae4e
+ |
+ | [!] Title: MC Woocommerce Wishlist < 1.9.0 - Authenticated (Administrator+) SQL Injection
+ |     Fixed in: 1.9.0
+ |     References:
+ |      - https://wpscan.com/vulnerability/38594bbf-8335-4573-bc87-b1e563ce7988
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30879
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c11f469-b136-4429-87a1-083d7d5e6695
+ |
+ | [!] Title: MC Woocommerce Wishlist < 1.9.2 - Reflected Cross-Site Scripting
+ |     Fixed in: 1.9.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/c7ae4eb6-813d-45d7-a0c2-ea3fe659eb8e
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47487
+ |      - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ca26f8b-795c-4d3b-b79c-1109e65a9e7f
+ |
+ | Version: 1.8.7 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/smart-wishlist-for-more-convert/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/smart-wishlist-for-more-convert/readme.txt
+
+[+] woo-variation-swatches
+ | Location: http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/
+ | Last Updated: 2025-02-16T11:43:00.000Z
+ | [!] The version is out of date, the latest version is 2.2.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | [!] 1 vulnerability identified:
+ |
+ | [!] Title: Variation Swatches for WooCommerce < 1.0.62 - Reflected XSS
+ |     Fixed in: 1.0.62
+ |     References:
+ |      - https://wpscan.com/vulnerability/0a185eb0-116e-4f5c-818a-3031efe2cbec
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14774
+ |
+ | Version: 1.0.61 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/assets/css/frontend.min.css?ver=1.0.61
+ |  - http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/assets/css/frontend-tooltip.min.css?ver=1.0.61
+ |  - http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/assets/js/frontend.min.js?ver=1.0.61
+ | Confirmed By:
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/README.txt
+ |  Composer File (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/woo-variation-swatches/package.json, Match: '1.0.61'
+
+[+] woocommerce
+ | Location: http://localhost/wordpress/wp-content/plugins/woocommerce/
+ | Last Updated: 2025-08-12T09:58:00.000Z
+ | [!] The version is out of date, the latest version is 10.1.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By:
+ |  Urls In 404 Page (Passive Detection)
+ |  Meta Generator (Passive Detection)
+ |
+ | [!] 3 vulnerabilities identified:
+ |
+ | [!] Title: Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form
+ |     Fixed in: 9.7.1
+ |     References:
+ |      - https://wpscan.com/vulnerability/94cbfc1b-9a55-44fa-b1d9-0c47980ace3c
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-26762
+ |      - https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/
+ |
+ | [!] Title: Wocommerce < 9.9.4 - Shop manager+ SQLi
+ |     Fixed in: 9.9.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/b893ee7e-0044-43f4-8d77-0aab5f581c02
+ |      - https://hackerone.com/reports/3198980
+ |
+ | [!] Title: WooCommerce < 10.0 - Shop Manager PII Leak in Multisite
+ |     Fixed in: 10.0
+ |     Reference: https://wpscan.com/vulnerability/7a380aca-4579-4a38-b566-4c4e9ef049f5
+ |
+ | Version: 9.7.0 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=9.7.0
+ |  - http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.7.0
+ |  - http://localhost/wordpress/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.7.0
+ | Confirmed By:
+ |  Meta Generator (Passive Detection)
+ |   - http://localhost/wordpress/, Match: 'WooCommerce 9.7.0'
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://localhost/wordpress/wp-content/plugins/woocommerce/readme.txt
+
+[+] WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 9
+ | Requests Remaining: 16
+
+[+] Finished: Tue Aug 19 12:19:09 2025
+[+] Requests Done: 56
+[+] Cached Requests: 6
+[+] Data Sent: 15.355 KB
+[+] Data Received: 2.155 MB
+[+] Memory used: 280.609 MB
+[+] Elapsed time: 00:00:23
