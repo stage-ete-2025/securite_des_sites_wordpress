@@ -1,0 +1,52 @@
+Politique de Mots de Passe Forts
+
+Objectif
+Garantir la sécurité des comptes utilisateurs et administrateurs du site WordPress en imposant des règles strictes de création, de gestion et de renouvellement des mots de passe.
+
+1. Exigences de Création des Mots de Passe
+
+Longueur minimale : 12 caractères
+
+Doit contenir :
+
+Majuscules (A-Z)
+
+Minuscules (a-z)
+
+Chiffres (0-9)
+
+Caractères spéciaux (! @ # $ % ^ & *)
+
+Interdiction d’utiliser :
+
+Des mots du dictionnaire
+
+Des suites simples (ex. 123456, azerty)
+
+Des informations personnelles (nom, date de naissance)
+
+2. Gestion et Renouvellement
+
+Renouvellement obligatoire tous les 90 jours
+
+Interdiction de réutiliser les 3 derniers mots de passe
+
+Authentification à deux facteurs (2FA) obligatoire pour les administrateurs
+
+3. Mesures Techniques
+
+Implémentation d’un contrôle de complexité lors de la création et modification de mot de passe
+
+Forcer la réinitialisation des mots de passe existants
+
+Activer la détection de tentatives de connexion suspectes
+
+4. Responsabilité des Utilisateurs
+
+Ne jamais partager son mot de passe
+
+Changer le mot de passe immédiatement en cas de suspicion de compromission
+
+5. Sanctions
+
+Tout manquement à cette politique pourra entraîner la suspension du compte.
