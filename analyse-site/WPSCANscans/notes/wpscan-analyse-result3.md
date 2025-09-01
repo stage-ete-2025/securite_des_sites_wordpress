@@ -36,7 +36,7 @@ wpscan --url http://localhost/wordpress --enumerate vp,vt
 ---
 
 
-## 5. ✅ Recommandations Générales
+## 5.  Recommandations Générales
 
 2. **Désactiver ou restreindre XML-RPC** si non nécessaire.
 3. **Supprimer les fichiers non essentiels exposés au public** (`readme.html`, etc.).
@@ -48,7 +48,7 @@ wpscan --url http://localhost/wordpress --enumerate vp,vt
 
 
 
-## 7. 🧠 Conclusion
+## 7.  Conclusion
 
 L’instance WordPress auditée est globalement à jour et bien configurée, mais plusieurs points techniques doivent être renforcés pour réduire la surface d’attaque. L’utilisation d’un token WPScan ainsi que la mise en place de configurations serveur renforcées sont vivement recommandées.
 

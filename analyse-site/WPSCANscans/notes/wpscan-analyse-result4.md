@@ -1,25 +1,25 @@
  
-🔧 Outil : WPScan v3.8.27  
-🌐 Site analysé : http://localhost/wordpress  
-🧪 API WPScan : Activée (plan gratuit)
+ Outil : WPScan v3.8.27  
+ Site analysé : http://localhost/wordpress  
+ API WPScan : Activée (plan gratuit)
 
 ---
 
-## 🧾 1. Informations générales sur le site
+##  1. Informations générales sur le site
 
 | Élément                      | Détail |
 |-----------------------------|--------|
-| Version WordPress           | 6.8.1 (à jour ✅) |
-| Thème actif                 | Astra v4.11.5 (à jour ✅) |
+| Version WordPress           | 6.8.1 (à jour ) |
+| Thème actif                 | Astra v4.11.5 (à jour ) |
 | Plugins détectés            | Aucun plugin détecté |
 | Utilisateur(s) détecté(s)   | `oumaima` |
 | WP-Cron                     | Activé (exécutable publiquement) |
 
 ---
 
-## 🔍 2. Résultats du scan en détail
+## 2. Résultats du scan en détail
 
-### 📌 A. Informations serveur (en-têtes HTTP)
+###  A. Informations serveur (en-têtes HTTP)
 
 - **Serveur** : Apache/2.4.58 (Unix)
 - **PHP** : 8.2.12 (exposé via `X-Powered-By`)
@@ -30,7 +30,7 @@
 - Dans le fichier `php.ini`, désactiver l’exposition de PHP :
   ```ini
   expose_php = Off
-📌 B. wp-cron.php est actif
+  B. wp-cron.php est actif
 
     URL détectée : http://localhost/wordpress/wp-cron.php
 
@@ -54,7 +54,7 @@ define('DISABLE_WP_CRON', true);
       Require all denied
     </Files>
 
-📌 C. Thème actif : Astra
+ C. Thème actif : Astra
 Élément	Détail
 Nom du thème	Astra
 Version	4.11.5
@@ -70,7 +70,7 @@ Analyse :
 Risque : Aucun risque détecté à cette version
 
 Recommandation : Maintenir le thème à jour
-📌 D. Utilisateur détecté : oumaima
+ D. Utilisateur détecté : oumaima
 
 Méthodes de détection utilisées :
 Méthode	Détail

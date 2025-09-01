@@ -1,26 +1,26 @@
-# 🛡️ Rapport WPScan pour le resultat 1
+# Rapport WPScan pour le resultat 1
 
-🔧 **Outil utilisé** : WPScan v3.8.27  
-🌐 **URL analysée** : http://localhost/wordpress
+**Outil utilisé** : WPScan v3.8.27  
+**URL analysée** : http://localhost/wordpress
 
 ---
 
-## 📍 Informations générales
+##  Informations générales
 
 | Élément                     | Détail |
 |----------------------------|--------|
-| Version WordPress          | 6.8.1 (à jour ✅) |
-| Thème actif                | Twenty Twenty-Five v1.2 (à jour ✅) |
-| Plugins détectés           | Aucun plugin trouvé ❗ |
+| Version WordPress          | 6.8.1 (à jour ) |
+| Thème actif                | Twenty Twenty-Five v1.2 (à jour ) |
+| Plugins détectés           | Aucun plugin trouvé  |
 | Utilisateurs détectés      | Aucun (non exposés) |
 
 ---
 
-## ⚠️ Vulnérabilités et points faibles identifiés
+##  Vulnérabilités et points faibles identifiés
 
 ### 🔹 A. Fichier `xmlrpc.php` activé
 
-- **Statut** : Actif ✅
+- **Statut** : Actif 
 - **URL** : http://localhost/wordpress/xmlrpc.php
 - **Risques** :
   - Attaques par brute-force XML-RPC (system.multicall)
@@ -35,7 +35,7 @@
   
 ### 🔹 B. Fichier readme.html exposé
 
-    Statut : Présent ✅
+    Statut : Présent 
 
     URL : http://localhost/wordpress/readme.html
 
@@ -48,7 +48,7 @@ sudo rm /opt/lampp/htdocs/wordpress/readme.html
 ### 🔹 C. Directory listing activé
 1. /wp-content/uploads/
 
-    Statut : Listing activé ❗
+    Statut : Listing activé 
 
     Risque : Accès public à tous les fichiers médias
 
@@ -63,7 +63,7 @@ Ou ajouter un fichier .htaccess :
 
 2. /wp-content/themes/twentytwentyfive/
 
-    Statut : Listing activé ❗
+    Statut : Listing activé 
 
     Risque : Fuite de structure de fichiers PHP
 
@@ -74,7 +74,7 @@ Ou ajouter un fichier .htaccess :
 
 ###🔹 D. Fichier wp-cron.php actif
 
-    Statut : Actif ✅
+    Statut : Actif 
 
     URL : http://localhost/wordpress/wp-cron.php
 
